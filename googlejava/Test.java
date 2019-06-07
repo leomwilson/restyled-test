@@ -1,28 +1,32 @@
+package googlejava;
+
 import java.util.ArrayList; // out of alphebetical order (3.3.3)
 
 import java.io.File; // no newlines between nonstatic imports (3.3.3)
 import javax.swing.*; // no wildcard imports (3.3.1)
 
-package googlejava; // package should be the first statement (3)
-
 public class Test { // should have a javadoc (7.3)
+  private int a;
+  
   public Test(int a) {
     // first constructor
+    this.a = a;
   }
   public void doSomething() { // should also have a javadoc (7.3)
     // overloaded methods/constructors should be together (3.4.2.1)
   }
   public Test(int a, int b) {
     // second constructor
+    this.a = a * b;
   }
   public int doOtherThings() { // there should be a newline before this method (4.6.1) and a javadoc (7.3)
-    if (true) // should have braces (4.1.1)
+    if (a == 0) // should have braces (4.1.1)
       System.out.println("indeed");
-    while (false)
+    while (a == 1)
     {
       // K&R braces (4.1.2)
     }
-    if (false) {
+    if (a == 2) {
       System.out.println("	"); // tabs should be escaped (2.3.1)
     }
     else {
@@ -39,19 +43,18 @@ public class Test { // should have a javadoc (7.3)
         println("Should break before the symbol"); // (4.5.1)
     System.out
       .println("Should be indented by 4 spaces"); // (4.5.2)
-    if(false) { // there should be a space between if and ( (4.6.2)
+    if(a == 3) { // there should be a space between if and ( (4.6.2)
       return 1;
     } else{ // space before brace (4.6.2)
-      return (true?2:3); // there should be some spaces here (4.6.2)
+      return ((a == 4)?2:3); // there should be some spaces here (4.6.2)
     }
-    return 0;
   }
 
   public void someOtherMethod() {
     int c, d; // should be declared seperately (4.8.2.1)
     int e = 5; // not used until later (4.8.2.2)
     System.out.println("some random code");
-    system.out.println(e * 5 + 6 + 7 * 8 - 9); // should have grouping parentheses (4.7)
+    System.out.println(e * 5 + 6 + 7 * 8 - 9); // should have grouping parentheses (4.7)
     int f[] = new int[7]; // should be int[] f (4.8.3.2)
     switch (e) {
       case 0: // this is ok (4.8.4.2)
